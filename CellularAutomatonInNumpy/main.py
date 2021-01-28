@@ -36,7 +36,7 @@ def step (grid):
 """
 Here the general parameters are set: The size of the grid, the number of iterations"""
 
-steps = 200
+steps = 50
 grid_rows = 200
 grid_cols = 100
 
