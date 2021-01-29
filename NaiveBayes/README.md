@@ -15,4 +15,4 @@ This is represented by the diagram below, which has the "true" probabilities: <b
 ![](https://github.com/GiottoFrean/Small-Python-Projects/blob/main/NaiveBayes/PGM.png "PGM")
 
 <br>
-Using the above model data is generated, and a Naive Bayes classifier trained with it. <br>
+Using the above model data is generated, and a Naive Bayes classifier trained with it.<br>
