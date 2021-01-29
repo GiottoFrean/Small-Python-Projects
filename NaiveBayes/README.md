@@ -17,7 +17,7 @@ This is represented by the diagram below, which has the "true" probabilities: <b
 <br>
 Using the above model data is generated, and a Naive Bayes classifier trained with it.<br>
 
-** Expected output: ** <br>
+**Example output:** <br>
 
 1. Generating Data (printing up to 10 rows):
 2. weather: clear      temp: 12.596     raincoats: few
