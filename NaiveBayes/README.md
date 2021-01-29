@@ -19,24 +19,24 @@ Using the above model data is generated, and a Naive Bayes classifier trained wi
 
 **Example output:** <br>
 
-1. Generating Data (printing up to 10 rows):
-2. weather: clear      temp: 12.596     raincoats: few
-3. weather: clear      temp: 17.905     raincoats: few
-4. weather: rain       temp: 17.632     raincoats: lots
-5. weather: clear      temp: 15.496     raincoats: few
-6. weather: rain       temp: 13.49      raincoats: lots
-7. weather: rain       temp: 15.139     raincoats: lots
-8. weather: sun        temp: 25.383     raincoats: none
-9. weather: clear      temp: 17.872     raincoats: few
-10. weather: clear      temp: 16.022     raincoats: few
-11. weather: rain       temp: 14.976     raincoats: few
-12. 
-13. \[22.96 15.83 17.1 \]   <- T mean|W
-14. \[4.92 3.52 4.39 \]   <- T std|W
-15. \[\[0.9  0.02 0.15 \]
-16. \[0.06 0.09 0.63 \]
-17. \[0.02 0.75 0.21 \]
-18. \[0.02 0.14 0.01 \]\]   <- prob R|W, rounded to 2dp
+> Generating Data (printing up to 10 rows):
+> weather: clear      temp: 12.596     raincoats: few
+> weather: clear      temp: 17.905     raincoats: few
+> weather: rain       temp: 17.632     raincoats: lots
+> weather: clear      temp: 15.496     raincoats: few
+> weather: rain       temp: 13.49      raincoats: lots
+> weather: rain       temp: 15.139     raincoats: lots
+> weather: sun        temp: 25.383     raincoats: none
+> weather: clear      temp: 17.872     raincoats: few
+> weather: clear      temp: 16.022     raincoats: few
+> weather: rain       temp: 14.976     raincoats: few
+> 
+> \[22.96 15.83 17.1 \]   <- T mean|W
+> \[4.92 3.52 4.39 \]   <- T std|W
+> \[\[0.9  0.02 0.15 \]
+> \[0.06 0.09 0.63 \]
+> \[0.02 0.75 0.21 \]
+> \[0.02 0.14 0.01 \]\]   <- prob R|W, rounded to 2dp
 
 total test accuracy: 82.0 %
 accuracy on true sunny data: 85.71428571428571 %
