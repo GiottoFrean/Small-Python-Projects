@@ -12,7 +12,7 @@ This is a simple naive bayes classifer, trained on a toy problem: <br>
 * T and R are conditionally independent given W.
 This is represented by the diagram below, which has the "true" probabilities: <br>
 
-![](https://github.com/GiottoFrean/Small-Python-Projects/blob/main/NaiveBayes/PGM.png "PGM")
+<img src="https://github.com/GiottoFrean/Small-Python-Projects/blob/main/NaiveBayes/PGM.png" alt="PGM" width="600"/>
 
 <br>
 Using the above model data is generated, and a Naive Bayes classifier trained with it.<br>
