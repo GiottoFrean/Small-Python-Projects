@@ -42,4 +42,3 @@ total test accuracy: 82.0 %
 accuracy on true sunny data: 85.71428571428571 %
 accuracy on true rainy data: 92.85714285714286 %
 accuracy on true cloudy data: 75.86206896551724 %
-
