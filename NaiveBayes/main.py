@@ -27,8 +27,11 @@ number_of_test_items = int(number_of_data_points*test_ratio)
 test_data = data[:number_of_test_items]
 train_data = data[number_of_test_items:]
 print("")
+# Estimate the means, std of T|W:
+# 1 fictional point is appended in the process (with value 0) to prevent errors if there is no data (e.g no sunny days) 
 T_mean_conditioned_on_W = np.array([np.mean(np.append(train_data[train_data[:,0]==w,1],0)) for w in range(3)])
 T_std_conditioned_on_W = np.array([np.std(np.append(train_data[train_data[:,0]==w,1],0)) for w in range(3)])
+# Now calculate the categorical frequencies (raw W probabilities, and R|W)
 W_frequencies = np.ones(3)
 R_frequencies_given_W = np.ones((4,3))
 for train_index in range(0,train_data.shape[0]):
@@ -43,7 +46,7 @@ print(T_std_conditioned_on_W.round(2), "  <- T std|W")
 print(R_probs_given_W.round(2), "  <- prob R|W, rounded to 2dp")
 print("")
 
-def gaussian_pdf(x,mean,std):
+def gaussian_pdf(x,mean,std): # needed to calculate probability density function for T in testing
 	return (1/np.sqrt(2*np.pi*std**2))*np.exp(-0.5*((mean-x)/std)**2)
 
 predicted_weather = np.zeros(number_of_test_items)
