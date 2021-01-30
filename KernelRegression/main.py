@@ -2,19 +2,21 @@ import numpy as np
 import plotly.graph_objects as go
 import plotly.express as px
 
-tuning_param = 1
+tuning_param = 1 # the only hyper-parameter.
 
+# make real data
 x_known = np.array([-4,-3.5,-2.5,-2,-0.5,0,1,1.5,2,2.5,4])
 y_known = np.sin(x_known)
 
-x_unknown = np.linspace(-5,5,100)
-squared_distances = (np.repeat(x_unknown.reshape(-1,1),len(x_known),axis=1)-x_known)**2
-kernel_values = np.exp(-0.5*squared_distances*tuning_param)
-predictions = np.sum(kernel_values*y_known,axis=1)/np.sum(kernel_values,axis=1)
+x_unknown = np.linspace(-5,5,100) # make 100 points to display.
+squared_distances = (np.repeat(x_unknown.reshape(-1,1),len(x_known),axis=1)-x_known)**2 # calculate the distance between every known and unknown point.
+kernel_values = np.exp(-0.5*squared_distances*tuning_param) # get the kernel value, here using a simple gaussian-like kernel
+predictions = np.sum(kernel_values*y_known,axis=1)/np.sum(kernel_values,axis=1) # predictions are a weighted sum of kernel outputs, normalized. 
 
+
+# Now, just plotting the original points and predictions with plotly:
 trace1 = go.Scatter(x=x_known, y=y_known, name="known points", mode="markers", showlegend=False,marker=dict(color="red",size=10))
 trace2 = go.Scatter(x=x_unknown, y=predictions, name="unknown points", mode="lines", showlegend=False,line=dict(color="green",width=3))
-
 layout = go.Layout(
 	title = "Kernel Regression with tuning parameter:" + str(tuning_param),
 	xaxis = dict(
@@ -45,7 +47,5 @@ layout = go.Layout(
     	x=0.02
 	)
 )
-
 fig = go.Figure(data=[trace1,trace2],layout=layout)
-
 fig.write_image("plot_data_pred.png",width=800,height=400)
